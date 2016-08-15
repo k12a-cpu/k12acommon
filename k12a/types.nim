@@ -57,7 +57,7 @@ type
     aluB
   
   Port* = range[0u8..7u8]
-  Offset* = range[-2048i16..2046i16]
+  Offset* = range[-1024i16..1023i16]
   Imm* = uint8
   
   Instruction* = uint16
