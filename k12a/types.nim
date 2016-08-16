@@ -29,7 +29,7 @@ type
   Condition* = enum
     condZero
     condNegative
-    condBorrow
+    condLSB
     condOverflow
     condULT
     condULE
@@ -94,7 +94,7 @@ proc decodeCondition*(inst: Instruction): Condition {.noSideEffect, raises: [].}
   case inst and 0x0700u16
   of 0x0000u16: condZero
   of 0x0100u16: condNegative
-  of 0x0200u16: condBorrow
+  of 0x0200u16: condLSB
   of 0x0300u16: condOverflow
   of 0x0400u16: condULT
   of 0x0500u16: condULE
